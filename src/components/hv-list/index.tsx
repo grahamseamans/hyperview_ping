@@ -139,6 +139,8 @@ export default class HvList extends PureComponent<HvComponentProps, State> {
 
   refresh = () => {
     this.setState({ refreshing: true });
+    let element = Dom.getElementById(this.context.getDoc(), this.props.element.id)
+    
 
     Dom.getBehaviorElements(this.props.element)
       .filter(e => e.getAttribute('trigger') === 'refresh')
